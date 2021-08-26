@@ -14,7 +14,7 @@ import numpy as np
 import pickle
 import os
 
-PORT = int(os.environ.get('PORT', 80))
+PORT = int(os.environ.get('PORT', 8443))
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 animelist = pd.read_csv('anime.csv')
 knn_file = open("knnmodel", "rb")
@@ -87,8 +87,8 @@ def main():
 
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=BOT_TOKEN)
-    updater.bot.setWebhook('https://animerecbot.herokuapp.com/' + BOT_TOKEN)
+                          url_path=BOT_TOKEN,
+                          webhook_url='https://animerecbot.herokuapp.com/' + BOT_TOKEN)
 
     updater.idle()
 
