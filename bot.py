@@ -14,7 +14,7 @@ import numpy as np
 import pickle
 import os
 
-PORT = int(os.environ.get('PORT', 5000))
+PORT = int(os.environ.get('PORT', 80))
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 animelist = pd.read_csv('anime.csv')
 knn_file = open("knnmodel", "rb")
