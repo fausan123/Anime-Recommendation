@@ -16,12 +16,12 @@ import os
 
 PORT = int(os.environ.get('PORT', 8443))
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
-animelist = pd.read_csv('anime.csv')
-knn_file = open("knnmodel", "rb")
+animelist = pd.read_csv('data/anime.csv')
+knn_file = open("data/knnmodel", "rb")
 knnmodel = pickle.load(knn_file)
-sparsey_file = open("sparsey", "rb")
+sparsey_file = open("data/sparsey", "rb")
 sparse_y = pickle.load(sparsey_file)
-animeids_file = open("animeids", "rb")
+animeids_file = open("data/animeids", "rb")
 anime_ids = pickle.load(animeids_file)
 
 knn_file.close()
